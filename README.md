@@ -10,21 +10,21 @@ With Expo installed, you can then run `expo start` to launch the app.
 Next scan QR Code on your device.
 
 ## Components
-####`OneDayWeather`
+`OneDayWeather`
 
 ![Algorithm schema](./Print_Screen/OneDayWeather.jpg)
 
-####`DetailItem`
+`DetailItem`
 
 ![Algorithm schema](./Print_Screen/DetailItem.jpg)
 
 ## Screens
 
-####`FewDaysWeather`
+`FewDaysWeather`
 
 ![Algorithm schema](./Print_Screen/home.jpg)
 
-####`WeatherDetails`
+`WeatherDetails`
 
 ![Algorithm schema](./Print_Screen/details_1.jpg)
 ![Algorithm schema](./Print_Screen/details_2.jpg)
