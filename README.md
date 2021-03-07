@@ -1,5 +1,11 @@
 # WeatherApp
+An aplication shows forecast weather for your localization.
+
 ![Algorithm schema](./Print_Screen/presentation.gif)
+
+# Technologies
+React-Native (expo), Redux, Fetch
+
 ## Getting Started
 This app is available on the [Expo](https://expo.io/ "Expo homepage") platform. After you have installed Expo onto your device you can building your own copy.
 
