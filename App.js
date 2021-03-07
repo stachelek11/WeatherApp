@@ -1,21 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import allReducers from "./reducers/allReducers";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import FewDaysWeather from "./screens/FewDaysWeather";
+import WeatherDetails from "./screens/WeatherDetails";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const store = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Stack = createStackNavigator();
+
+const App = () => (
+  <Provider store={store}>
+    <StatusBar style="auto" />
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="FewDaysWeather">
+        <Stack.Screen
+          name="FewDaysWeather"
+          component={FewDaysWeather}
+          options={{
+            title: "5 Days",
+          }}
+        />
+        <Stack.Screen
+          name="WeatherDetails"
+          component={WeatherDetails}
+          options={({ route }) => ({
+            title: route.params.day,
+          })}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  </Provider>
+);
+
+export default App;

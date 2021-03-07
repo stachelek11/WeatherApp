@@ -5,8 +5,8 @@
     "name": "WeatherApp",
     "slug": "WeatherApp",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "orientation": "portrait",
+    "icon": "./context/icon.png",
+    "assetBundlePatterns": ["**/*"]
   }
 }
